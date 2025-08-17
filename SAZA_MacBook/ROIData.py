@@ -104,12 +104,12 @@ def ROIData_edit(data_folder,TMIN,TMAX):
                     else:
                         Mean_t_per_entry = round(TIn/entry,5)
 
-                    data = data.append({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
+                    data = pd.concat([data, pd.DataFrame({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
                             'MeanVIn':np.mean(VIn), 'MeanVOut':np.mean(VOut),\
                             'StdVIn':np.std(VIn), 'StdVOut':np.std(VOut),'ENTRIES':entry,\
                             'Mean T per entry': Mean_t_per_entry,'% time in ROI':perc_time_rec,\
-                            'sanity':sanity}, ignore_index=True)
-                
+                            'sanity':sanity}, index=[0])], ignore_index=True)
+
                 # when done each ROI, save data to specific sheet
                 data.to_excel(writer, sheet_name=filename[m][n], index = False)
                 worksheet = writer.sheets[filename[m][n]]
@@ -219,12 +219,12 @@ def ROIData_180sec(data_folder):
                     else:
                         Mean_t_per_entry = round(TIn/entry,5)
 
-                    data = data.append({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
+                    data = pd.concat([data, pd.DataFrame({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
                             'MeanVIn':np.mean(VIn), 'MeanVOut':np.mean(VOut),\
                             'StdVIn':np.std(VIn), 'StdVOut':np.std(VOut),'ENTRIES':entry,\
                             'Mean T per entry': Mean_t_per_entry,'% time in ROI':perc_time_rec,\
-                            'sanity':sanity}, ignore_index=True)
-                
+                            'sanity':sanity}, index=[0])], ignore_index=True)
+
                 # when done each ROI, save data to specific sheet
                 data.to_excel(writer, sheet_name=filename[m][n], index = False)
                 worksheet = writer.sheets[filename[m][n]]
@@ -334,12 +334,12 @@ def ROIData_std(data_folder):
                     else:
                         Mean_t_per_entry = round(TIn/entry,5)
 
-                    data = data.append({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
+                    data = pd.concat([data, pd.DataFrame({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
                             'MeanVIn':np.mean(VIn), 'MeanVOut':np.mean(VOut),\
                             'StdVIn':np.std(VIn), 'StdVOut':np.std(VOut),'ENTRIES':entry,\
                             'Mean T per entry': Mean_t_per_entry,'% time in ROI':perc_time_rec,\
-                            'sanity':sanity}, ignore_index=True)
-                
+                            'sanity':sanity}, index=[0])], ignore_index=True)
+
                 # when done each ROI, save data to specific sheet
                 data.to_excel(writer, sheet_name=filename[m][n], index = False)
                 worksheet = writer.sheets[filename[m][n]]
@@ -446,12 +446,12 @@ def ROIData_basic(data_folder):
                     else:
                         Mean_t_per_entry = round(TIn/entry,5)
 
-                    data = data.append({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
+                    data = pd.concat([data, pd.DataFrame({'Fish Number': index, 'TIn':TIn, 'TOut':TOut, 'BoundaryCrossings':Changes,\
                             'MeanVIn':np.mean(VIn), 'MeanVOut':np.mean(VOut),\
                             'StdVIn':np.std(VIn), 'StdVOut':np.std(VOut),'ENTRIES':entry,\
                             'Mean T per entry': Mean_t_per_entry,'% time in ROI':perc_time_rec,\
-                            'sanity':sanity}, ignore_index=True)
-                
+                            'sanity':sanity}, index=[0])], ignore_index=True)
+
                 # when done each ROI, save data to specific sheet
                 data.to_excel(writer, sheet_name=filename[m][n], index = False)
                 worksheet = writer.sheets[filename[m][n]]
